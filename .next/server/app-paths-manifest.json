@@ -1,0 +1,21 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/cadastrar/page": "app/cadastrar/page.js",
+  "/confirmacao-checkin/page": "app/confirmacao-checkin/page.js",
+  "/consultar/page": "app/consultar/page.js",
+  "/editar/[id]/page": "app/editar/[id]/page.js",
+  "/novo-checkin/[id]/page": "app/novo-checkin/[id]/page.js",
+  "/page": "app/page.js",
+  "/sucesso/page": "app/sucesso/page.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
+  "/api/auth/verify/route": "app/api/auth/verify/route.js",
+  "/api/guests/[id]/route": "app/api/guests/[id]/route.js",
+  "/api/guests/export/route": "app/api/guests/export/route.js",
+  "/api/guests/route": "app/api/guests/route.js",
+  "/api/guests/search/route": "app/api/guests/search/route.js",
+  "/api/stays/[id]/route": "app/api/stays/[id]/route.js",
+  "/api/stays/route": "app/api/stays/route.js"
+}
