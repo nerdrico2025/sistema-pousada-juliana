@@ -1,0 +1,51 @@
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+    output = "/home/ubuntu/pousada-juliana/app/node_modules/.prisma/client"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Guest {
+  id            String   @id @default(cuid())
+  nomeCompleto  String
+  cpf           String   @unique
+  email         String
+  telefone      String
+  dataNascimento DateTime
+  dataCadastro  DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Relacionamento com estadias
+  stays         Stay[]
+
+  @@map("guests")
+}
+
+model Stay {
+  id          String   @id @default(cuid())
+  guestId     String
+  guest       Guest    @relation(fields: [guestId], references: [id], onDelete: Cascade)
+  dataEntrada DateTime
+  dataSaida   DateTime
+  status      String   @default("ativo") // "ativo", "finalizado", "cancelado"
+  observacoes String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("stays")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  login     String   @unique
+  senha     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admins")
+}
